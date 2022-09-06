@@ -4,11 +4,13 @@
     --primario: #BDF2D5;
     --secundario: #4B5D67;
     --gris: #3C2C3E;
+    --azulClaro: #dfe9f3;
 }
 
+/** Globales **/
 html {
     font-size: 62.5%;
-    box-sizing: border-box;
+    box-sizing: border-box; /** Hack Box Model **/
 }
 
 *, *:before, *:after {
@@ -18,15 +20,7 @@ html {
 body {
     font-size: 16px; /* 1rem = 10px */
     font-family: 'Krub', sans-serif;
-}
-
-.titulo {
-    text-align: center;
-    font-size: 3.8rem;
-}
-
-.titulo span {
-    font-size: 2rem;
+    background-image: linear-gradient(to top, var(--azulClaro) 0%, var(--blanco) 100%);
 }
 
 .contenedor {
@@ -34,6 +28,55 @@ body {
     margin: 0 auto;
 }
 
+.boton {
+    background-color: var(--primario);
+    color: var(--oscuro);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.5);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.5);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.5);
+}
+
+/** Tipografias **/
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    text-align: center; 
+}
+
+/** Titulos **/
+.titulo span {
+    font-size: 2rem;
+}
+
+/** Navegacion Principal **/
 .nav-bg {
     background-color: var(--secundario);
 }
@@ -70,9 +113,33 @@ body {
     color: var(--oscuro);
 }
 
+/** Hero **/
 .hero {
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 450px;
+    position: relative;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .6); /** CSS Anterior **/
+    /** background-color: rgb(0 0 0 / 60%);  Nuevo metodo **/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.ubicacion {
+    display: flex;
+    align-items: flex-end;
 }
